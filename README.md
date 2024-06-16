@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Lab 02b: Manage Governance via Azure Policy'
-    module: 'Administer Governance and Compliance'
----
 
 # Lab 02b - Manage Governance via Azure Policy
 
@@ -26,19 +21,10 @@ Your organization's cloud footprint has grown considerably in the last year. Dur
 
 - use resource locks to protect configured resources
 
-## Interactive lab simulations
-
-There are several interactive lab simulations that you might find useful for this topic. The simulation lets you to click through a similar scenario at your own pace. There are differences between the interactive simulation and this lab, but many of the core concepts are the same. An Azure subscription is not required. 
-
-+ [Manage resource locks](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Add a resource lock and test to confirm.
-  
-+ [Create an Azure policy](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Create an Azure policy that restricts the location resources can be located. Create a new resource and ensure the policy is enforced. 
-
-+ [Manage governance via Azure policy](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Create and assign tags via the Azure portal. Create an Azure policy that requires tagging. Remediate non-compliant resources.
-
 ## Architecture diagram
 
-![Diagram of the task architecture.](../media/az104-lab02b-architecture.png)
+![az104-lab02b-architecture](https://github.com/randyta/LAB_02b-Manage_Governance_via_Azure_Policy/assets/147352432/c31314c3-ad45-4530-9ebe-af2493a0d7f5)
+
 
 ## Job skills
 
@@ -82,7 +68,8 @@ In this task, you will assign the built-in *Require a tag and its value on resou
 
 1. In the **Authoring** blade, select **Definitions**. Take a moment to browse through the list of [built-in policy definitions](https://learn.microsoft.com/azure/governance/policy/samples/built-in-policies) that are available for you to use. Notice you can also search for a definition.
 
-    ![Screenshot of the policy definition.](../media/az104-lab02b-policytags.png)
+![az104-lab02b-policytags](https://github.com/randyta/LAB_02b-Manage_Governance_via_Azure_Policy/assets/147352432/75075808-0d2d-4713-bde8-d7458b349fbd)
+
 
 1. Click the entry representing the **Require a tag and its value on resources** built-in policy. Take a minute to review the definition. 
 
@@ -135,7 +122,8 @@ In this task, you will assign the built-in *Require a tag and its value on resou
 
 1. You should receive a **Validation failed** message. View the message to identify the reason for the failure. Verify the error message states that the resource deployment was disallowed by the policy. 
 
-    ![Screenshot of the disallowed policy error.](../media/az104-lab02b-policyerror.png) 
+![az104-lab02b-policyerror](https://github.com/randyta/LAB_02b-Manage_Governance_via_Azure_Policy/assets/147352432/a7cb1d85-eac5-4a88-b1a4-4abebf6ed6de)
+
 
 >**Note**: By clicking the **Raw Error** tab, you can find more details about the error, including the name of the role definition **Require Cost Center tag with Default value**. The deployment failed because the storage account you attempted to create did not have a tag named **Cost Center** with its value set to **Default**.
 
@@ -181,7 +169,8 @@ In this task, we will use the new policy definition to remediate any non-complia
 
     >**Note**: This policy definition includes the **Modify** effect. So, a managed identity is required. 
 
-    ![Screenshot of the policy remediation page. ](../media/az104-lab02b-policyremediation.png) 
+![az104-lab02b-policyremediation](https://github.com/randyta/LAB_02b-Manage_Governance_via_Azure_Policy/assets/147352432/e94b267f-d456-4dec-a7f6-c96b2f37741b)
+
 
 1. Click **Review + Create** and then click **Create**.
 
@@ -240,16 +229,6 @@ If you are working with **your own subscription** take a minute to delete the la
 + Using Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Using the CLI, `az group delete --name resourceGroupName`.
 
-## Extend your learning with Copilot
-Copilot can assist you in learning how to use the Azure scripting tools. Copilot can also assist in areas not covered in the lab or where you need more information. Open an Edge browser and choose Copilot (top right) or navigate to *copilot.microsoft.com*. Take a few minutes to try these prompts.
-+ What are the Azure PowerShell and CLI commands for adding and deleting resource locks on a resource group?
-+ Tabulate the differences between Azure policy and Azure RBAC, include examples.
-+ What are the steps to enforce Azure policy and remediate resources which are not compliant?
-+ How can I get a report of Azure resources with specific tags?
-
-## Learn more with self-paced training
-
-+ [Design an enterprise governance strategy](https://learn.microsoft.com/training/modules/enterprise-governance/). Use RBAC and Azure Policy to limit access to your Azure solutions, and determine which method is right for your security goals.
 
 ## Key takeaways
 
