@@ -217,7 +217,7 @@ In this task, you configure and test a resource lock. Locks prevent either delet
 
 1. You should receive a notification denying the deletion. 
 
-    ![Screenshot of the failure to delete message.](../media/az104-lab02b-failuretodelete.png) 
+ ![az104-lab02b-failuretodelete](https://github.com/randyta/LAB_02b-Manage_Governance_via_Azure_Policy/assets/147352432/4f35ea0b-f22f-4d70-92b0-0d69fe6ffa85)
 
     >**Note:** You will need to remove the lock if you intend to delete the resource group. 
     
